@@ -58,26 +58,120 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Simple gallery modal (lightbox) for tour photos
-const tourImages = document.querySelectorAll('.tour-photos img');
-tourImages.forEach(img => {
-    img.addEventListener('click', () => {
-        const modal = document.createElement('div');
-        modal.style.position = 'fixed';
-        modal.style.top = '0';
-        modal.style.left = '0';
-        modal.style.width = '100%';
-        modal.style.height = '100%';
-        modal.style.background = 'rgba(0,0,0,0.9)';
-        modal.style.display = 'flex';
-        modal.style.alignItems = 'center';
-        modal.style.justifyContent = 'center';
-        modal.style.zIndex = '1000';
-        modal.innerHTML = `<img src="${img.src}" style="max-width: 90%; max-height: 90%; border-radius: 10px;">`;
-        modal.addEventListener('click', () => modal.remove());
-        document.body.appendChild(modal);
+// Enhanced gallery modal (lightbox) with navigation for tour photos
+let currentImageIndex = 0;
+let currentGalleryImages = [];
+let galleryModal = null;
+
+function createGalleryModal() {
+    const modal = document.createElement('div');
+    modal.className = 'gallery-modal';
+    modal.innerHTML = `
+        <div class="gallery-container">
+            <button class="gallery-close">&times;</button>
+            <button class="gallery-prev">&#8249;</button>
+            <img class="gallery-image" src="" alt="">
+            <button class="gallery-next">&#8250;</button>
+            <div class="gallery-counter">
+                <span class="current-image">1</span> / <span class="total-images">1</span>
+            </div>
+        </div>
+    `;
+    return modal;
+}
+
+function showImage(index) {
+    if (currentGalleryImages.length === 0) return;
+    
+    currentImageIndex = index;
+    const img = galleryModal.querySelector('.gallery-image');
+    const counter = galleryModal.querySelector('.current-image');
+    const total = galleryModal.querySelector('.total-images');
+    
+    img.src = currentGalleryImages[currentImageIndex].src;
+    img.alt = currentGalleryImages[currentImageIndex].alt;
+    counter.textContent = currentImageIndex + 1;
+    total.textContent = currentGalleryImages.length;
+    
+    // Update navigation buttons
+    const prevBtn = galleryModal.querySelector('.gallery-prev');
+    const nextBtn = galleryModal.querySelector('.gallery-next');
+    
+    prevBtn.style.display = currentGalleryImages.length > 1 ? 'block' : 'none';
+    nextBtn.style.display = currentGalleryImages.length > 1 ? 'block' : 'none';
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+    showImage(currentImageIndex);
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+    showImage(currentImageIndex);
+}
+
+function closeGallery() {
+    if (galleryModal) {
+        galleryModal.remove();
+        galleryModal = null;
+        document.body.style.overflow = '';
+    }
+}
+
+// Initialize gallery for tour photos
+function initializeGallery() {
+    const tourSections = document.querySelectorAll('.tour-photos');
+    
+    tourSections.forEach(section => {
+        const images = section.querySelectorAll('img');
+        
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentGalleryImages = Array.from(images);
+                currentImageIndex = index;
+                
+                if (!galleryModal) {
+                    galleryModal = createGalleryModal();
+                    document.body.appendChild(galleryModal);
+                    
+                    // Add event listeners
+                    galleryModal.querySelector('.gallery-close').addEventListener('click', closeGallery);
+                    galleryModal.querySelector('.gallery-prev').addEventListener('click', prevImage);
+                    galleryModal.querySelector('.gallery-next').addEventListener('click', nextImage);
+                    
+                    // Close on background click
+                    galleryModal.addEventListener('click', (e) => {
+                        if (e.target === galleryModal) closeGallery();
+                    });
+                    
+                    // Keyboard navigation
+                    document.addEventListener('keydown', (e) => {
+                        if (!galleryModal) return;
+                        
+                        switch(e.key) {
+                            case 'Escape':
+                                closeGallery();
+                                break;
+                            case 'ArrowLeft':
+                                prevImage();
+                                break;
+                            case 'ArrowRight':
+                                nextImage();
+                                break;
+                        }
+                    });
+                }
+                
+                document.body.style.overflow = 'hidden';
+                showImage(currentImageIndex);
+            });
+        });
     });
-});
+}
+
+// Initialize gallery when page loads
+document.addEventListener('DOMContentLoaded', initializeGallery);
 
 // Toggle tour details
 function toggleTour(tourId) {
