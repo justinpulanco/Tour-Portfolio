@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Justin James Pulanco, IT student showcasing tours and experiences.">
+    <meta name="keywords" content="portfolio, IT student, tours, PLDT, VITRO, JairosSoft, Central 911">
+    <title>Justin James Pulanco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+    </header>
+
+    <section id="home" class="fade-in">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Hi, I'm Justin James Pulanco, an IT student passionate about technology, emergency response, and exploring innovative facilities. This portfolio showcases my experiences and learnings from various tours.</p>
+            </div>
+            <img src="./490024415_2316923125375297_3109816823113572187_n.jpg" alt="Justin James Pulanco" class="profile-photo">
+        </div>
+    </section>
+
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>I'm a dedicated IT student currently in my 3rd year at Holy Cross of Davao College. I have a keen interest in technology and how it impacts our daily lives. Through my tours, I've gained insights into data centers, communication networks, and emergency response systems.</p>
+    </section>
+
+    <section id="tours" class="fade-in">
+        <h2>My Tours</h2>
+        <div class="tour-container">
+            <div class="tour-card">
+                <h3 class="tour-title" onclick="toggleTour('pldt')">PLDT Inc.</h3>
+                <div id="pldt-content" class="tour-details hidden">
+                    <p><strong>Observations</strong></p>
+                    <p>At PLDT, I noticed the strict security the moment we arrived, showing how important and sensitive their operations are. The staff welcomed us properly and gave us an overview of how their systems work, including their data centers and stations. They also explained how they designed their facility to stay safe from natural disasters like earthquakes and typhoons. Everything looked well-maintained and clearly managed by people who know what they are doing.</p>
+                    <p><strong>Learnings</strong></p>
+                    <p>I learned that providing communication services to millions of users requires technical skill and strong dedication. Their backup power systems and careful handling of equipment showed me how prepared they need to be in every situation. The visit helped me understand that this type of work demands commitment, preparation, and teamwork.</p>
+                    <p><strong>Reflection</strong></p>
+                    <p>The experience gave me a clearer picture of what it takes to run a large communication company. It made me appreciate the effort behind maintaining stable and reliable connections for people every day.</p>
+                    <div class="tour-photos">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_474.jpeg" alt="PLDT Photo 1">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_548.jpeg" alt="PLDT Photo 2">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_592.jpeg" alt="PLDT Photo 3">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_747.jpeg" alt="PLDT Photo 4">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_801.jpeg" alt="PLDT Photo 5">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_001.jpeg" alt="PLDT Photo 6">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_440.jpeg" alt="PLDT Photo 7">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_529.jpeg" alt="PLDT Photo 8">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_577.jpeg" alt="PLDT Photo 9">
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <h3 class="tour-title" onclick="toggleTour('vitro')">VITRO Inc.</h3>
+                <div id="vitro-content" class="tour-details hidden">
+                    <p><strong>Observations</strong></p>
+                    <p>During my visit to VITRO, the first thing that caught my attention was how clean and organized the entire facility was. Every system and piece of equipment had its own proper place, and the layout showed that they really value order and efficiency. Their safety guidelines were also visible, which made it clear that they prioritize protection not just for their infrastructure but also for their staff. The employees worked quietly but with focus, and you could see their dedication to their tasks.</p>
+                    <p><strong>Learnings</strong></p>
+                    <p>From this visit, I learned that working in a data center requires consistency, accuracy, and a strong sense of responsibility. Managing servers and maintaining a stable digital environment is not easy, and it made me appreciate how important VITRO is in ensuring that digital services run smoothly. The experience also taught me that attention to detail is crucial in this kind of work.</p>
+                    <p><strong>Reflection</strong></p>
+                    <p>Overall, visiting VITRO was an eye-opening experience. Seeing how organized and disciplined the work environment is helped me understand the seriousness of maintaining digital infrastructures. It made me appreciate the people who work behind the scenes to keep our systems running.</p>
+                    <div class="tour-photos">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_474.jpeg" alt="VITRO Photo 1">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_548.jpeg" alt="VITRO Photo 2">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_592.jpeg" alt="VITRO Photo 3">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_747.jpeg" alt="VITRO Photo 4">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002024_801.jpeg" alt="VITRO Photo 5">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_001.jpeg" alt="VITRO Photo 6">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_440.jpeg" alt="VITRO Photo 7">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_529.jpeg" alt="VITRO Photo 8">
+                        <img src="./photos/PLDT & VITRO/Image_20251213_002025_577.jpeg" alt="VITRO Photo 9">
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <h3 class="tour-title" onclick="toggleTour('jairos')">JairosSoft Inc.</h3>
+                <div id="jairos-content" class="tour-details hidden">
+                    <p><strong>Observations</strong></p>
+                    <p>JairosSoft had a friendlier and more relaxed environment, but it was still clear that everyone understood their responsibilities. The staff introduced themselves and explained their roles, and I saw how well they communicated and supported one another. Their teamwork was very noticeable, and the tour showed how connected each task is to the whole operation.</p>
+                    <p><strong>Learnings</strong></p>
+                    <p>From this visit, I learned that teamwork plays a huge role in the tech industry. With technology advancing so quickly, relying only on yourself would slow everything down. A cooperative team makes tasks easier, faster, and more efficient. It also made me realize that communication and good working relationships are just as important as technical knowledge.</p>
+                    <p><strong>Reflection</strong></p>
+                    <p>The visit helped me understand how much easier and smoother work becomes when there is good teamwork. It made me value collaboration more, especially in fast-changing fields like technology.</p>
+                    <div class="tour-photos">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_065.jpeg" alt="JairosSoft Photo 1">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_206.jpeg" alt="JairosSoft Photo 2">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_309.jpeg" alt="JairosSoft Photo 3">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_425.jpeg" alt="JairosSoft Photo 4">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_597.jpeg" alt="JairosSoft Photo 5">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_855.jpeg" alt="JairosSoft Photo 6">
+                        <img src="./photos/Jairosoft/Image_20251213_001919_999.jpeg" alt="JairosSoft Photo 7">
+                        <img src="./photos/Jairosoft/Image_20251213_002025_054.jpeg" alt="JairosSoft Photo 8">
+                        <img src="./photos/Jairosoft/Image_20251213_002025_246.jpeg" alt="JairosSoft Photo 9">
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <h3 class="tour-title" onclick="toggleTour('911')">Davao City Central Communications and Emergency Response Center (Central 911)</h3>
+                <div id="911-content" class="tour-details hidden">
+                    <p><strong>Observations</strong></p>
+                    <p>At Central 911, I noticed how organized the whole place was. The vehicles, equipment, and different units were all arranged properly, showing how prepared they need to be at all times. The staff guided us well and explained how they respond to emergencies. Their professionalism and readiness were easy to see.</p>
+                    <p><strong>Learnings</strong></p>
+                    <p>The experience taught me that working in an emergency response center requires constant alertness and quick thinking. Everyone needs to stay focused and aware because emergencies can happen anytime. It also made me realize how important it is to stay updated on news and alerts, especially during critical events. The visit showed me the value of teamwork, readiness, and discipline in ensuring public safety.</p>
+                    <p><strong>Reflection</strong></p>
+                    <p>Overall, the visit made me appreciate the people who work in emergency response. Their dedication and preparedness play a huge role in keeping the community safe.</p>
+                    <div class="tour-photos">
+                        <img src="./photos/911/Image_20251213_001918_997.jpeg" alt="Central 911 Photo 1">
+                        <img src="./photos/911/Image_20251213_001919_148.jpeg" alt="Central 911 Photo 2">
+                        <img src="./photos/911/Image_20251213_001919_490.jpeg" alt="Central 911 Photo 3">
+                        <img src="./photos/911/Image_20251213_001919_786.jpeg" alt="Central 911 Photo 4">
+                        <img src="./photos/911/Image_20251213_001920_144.jpeg" alt="Central 911 Photo 5">
+                        <img src="./photos/911/Image_20251213_001920_217.jpeg" alt="Central 911 Photo 6">
+                        <img src="./photos/911/Image_20251213_001920_291.jpeg" alt="Central 911 Photo 7">
+                        <img src="./photos/911/Image_20251213_002024_952.png" alt="Central 911 Photo 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="fade-in">
+        <h2>Certificates</h2>
+        <div class="cert-list">
+            <img src="./CERTS/Image_20251213_001919_364.jpeg" alt="Certificate 1">
+            <img src="./CERTS/Screenshot 2025-12-13 010806.png" alt="Certificate 2">
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/justinjames.garay" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/jusstiiiin1/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/justinpulanco" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 Justin James Pulanco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
