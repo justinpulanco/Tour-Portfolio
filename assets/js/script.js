@@ -21,13 +21,28 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Theme toggle
+// Theme toggle with modern icons
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light');
-        themeToggle.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+        
+        // Add a subtle animation to the button
+        themeToggle.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            themeToggle.style.transform = '';
+        }, 150);
+        
+        // Save theme preference
+        const isLight = document.body.classList.contains('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
+    
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light');
+    }
 }
 
 // Hamburger menu toggle

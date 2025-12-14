@@ -121,13 +121,57 @@ nav ul li a:hover {
     background: none;
     border: none;
     color: #e0e0e0;
-    font-size: 1.2rem;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
 }
 
 .theme-btn:hover {
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.sun-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
+}
+
+.moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Light theme icon states */
+body.light .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+body.light .moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.8);
+}
+
+body.light .theme-btn {
+    color: #333;
+}
+
+body.light .theme-btn:hover {
     color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
 }
 #home {
     height: 100vh;
