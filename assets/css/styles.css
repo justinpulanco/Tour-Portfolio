@@ -1386,4 +1386,34 @@ body.light .photo-caption {
         font-size: 0.8rem;
         padding: 0.8rem 0.4rem 0.4rem;
     }
+}/* Cl
+ick Indicator Styles */
+.click-indicator {
+    font-size: 0.8rem;
+    color: #00d4ff;
+    font-weight: 400;
+    display: block;
+    margin-top: 0.3rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.tour-title:hover .click-indicator {
+    opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Light theme adjustments for click indicator */
+body.light .click-indicator {
+    color: #007bff;
 }
